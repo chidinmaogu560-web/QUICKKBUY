@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101828">
+<title>QuickBuy — Shop smarter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="logo">Q</span><span>Quick<span class="accent">Buy</span></span></a>
+  <nav><a href="#shop">Shop</a><a href="#sell">Sell on QuickBuy</a><a href="#refer">Refer & earn</a></nav>
+  <div class="top-actions"><button class="account-button" id="accountBtn">Sign in</button><button class="cart-button" id="cartBtn">Cart <b id="cartCount">0</b></button></div>
+</header>
+<section class="hero">
+  <div class="hero-copy"><span class="eyebrow">YOUR MARKETPLACE, YOUR WAY</span>
+    <h1>Good finds.<br><em>Quick buys.</em></h1>
+    <p>Discover everyday essentials and great deals from sellers on QuickBuy.</p>
+    <a class="primary" href="#shop">Explore products</a>
+  </div>
+  <div class="hero-art"><div class="orb"></div><div class="bag">Q</div><span class="float-tag tag-one">Great deals ✦</span><span class="float-tag tag-two">Shop Nigeria</span></div>
+</section>
+<main>
+<section class="trust-row"><div><strong>₦</strong><span>Prices in naira</span></div><div><strong>◎</strong><span>Buyer & seller community</span></div><div><strong>↗</strong><span>Share your referral link</span></div></section>
+<section id="shop" class="section">
+  <div class="section-head"><div><span class="eyebrow">FIND YOUR NEXT FAVOURITE</span><h2>Explore products</h2></div><input id="search" type="search" placeholder="Search products…"></div>
+  <div class="chips" id="categories"><button class="chip active" data-cat="All">All</button><button class="chip" data-cat="Electronics">Electronics</button><button class="chip" data-cat="Fashion">Fashion</button><button class="chip" data-cat="Home">Home</button><button class="chip" data-cat="Beauty">Beauty</button></div>
+  <div id="products" class="products"></div>
+</section>
+<section id="sell" class="sell-panel"><div><span class="eyebrow">GROW WITH US</span><h2>Have something to sell?</h2><p>Join the QuickBuy seller community and showcase your products to shoppers.</p></div><button class="primary" id="sellerBtn">Start selling</button></section>
+<section id="refer" class="ref-panel"><div><span class="eyebrow">SHARE THE GOOD STUFF</span><h2>Invite friends to QuickBuy</h2><p>Your personal referral link can help new shoppers find the marketplace. Rewards are only credited after qualifying orders are verified.</p></div><div class="ref-box"><label for="refCode">Your demo referral code</label><div class="ref-line"><input id="refCode" value="QB-FRIEND" readonly><button id="copyRef">Copy</button></div><small>Demo only — real referral tracking requires the connected database.</small></div></section>
+</main>
+<footer><a class="brand" href="#"><span class="logo">Q</span><span>Quick<span class="accent">Buy</span></span></a><p>Shop smarter. Buy with confidence.</p><small>Starter preview • Not yet connected to live orders or payments.</small></footer>
+<div class="toast" id="toast" role="status"></div>
+<dialog id="authDialog"><div class="dialog-head"><h2 id="authTitle">Your QuickBuy account</h2><button class="close" data-close>×</button></div>
+  <div id="authLoggedOut"><p class="fine">Create an account or sign in to use QuickBuy.</p>
+    <label class="auth-label" for="authName">Your name</label><input class="auth-input" id="authName" placeholder="Full name">
+    <label class="auth-label" for="authEmail">Email address</label><input class="auth-input" id="authEmail" type="email" autocomplete="email" placeholder="you@example.com">
+    <label class="auth-label" for="authPassword">Password</label><input class="auth-input" id="authPassword" type="password" autocomplete="current-password" placeholder="At least 6 characters">
+    <div class="auth-actions"><button class="primary" id="signUpBtn">Create account</button><button class="secondary" id="signInBtn">Sign in</button></div>
+    <p class="fine" id="authMessage">Use an email you can access. You may need to confirm it.</p>
+  </div>
+  <div id="authLoggedIn" hidden><p id="welcomeUser"></p><p class="fine" id="profileDetails"></p><button class="secondary full" id="signOutBtn">Sign out</button></div>
+</dialog>
+<dialog id="cartDialog"><div class="dialog-head"><h2>Your cart</h2><button class="close" data-close>×</button></div><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">₦0</strong></div><button class="primary full" id="checkoutBtn">Continue to checkout</button><p class="fine">Demo checkout only. No payment is collected.</p></dialog>
+<dialog id="sellerDialog"><div class="dialog-head"><h2>Sell on QuickBuy</h2><button class="close" data-close>×</button></div><p>Seller registration will be enabled when the secure database and authentication are connected.</p><button class="primary full" data-close>Got it</button></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script><script src="app.js"></script><script src="auth.js"></script>
+</body></html>

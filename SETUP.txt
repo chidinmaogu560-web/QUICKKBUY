@@ -1,0 +1,17 @@
+QUICKBUY — TURN ON REAL USER ACCOUNTS
+
+This update adds real email/password registration, sign-in, sign-out, and a private profile row for each account using Supabase Auth. It is not live until you complete these setup steps.
+
+1. With a parent/guardian if needed, create a Supabase project at https://supabase.com and verify your email.
+2. In the Supabase project, open SQL Editor, create a new query, paste all of supabase-schema.sql, and run it. This creates the profiles table, row-level security policies, and automatic profile creation for new users.
+3. Open Project Settings > API (or API Keys). Copy the Project URL and the anon/public key. Do NOT copy the service_role or secret key.
+4. Open supabase-config.js. Replace the two PASTE_... values with your Project URL and anon/public key. Save.
+5. Upload the complete QuickBuy folder to your GitHub repository and enable GitHub Pages. Make sure supabase-config.js is included.
+6. In Supabase Authentication > URL Configuration, add your exact GitHub Pages website address to Site URL and Redirect URLs.
+7. Open the published website in Chrome. Create an account with an email you can access. If email confirmation is enabled, confirm the email before signing in.
+
+IMPORTANT
+- This gives real accounts and private user profiles. It does not yet make seller listings, live referrals, checkout, payment verification, or payouts operational.
+- Never put a Supabase service_role/secret key in website files or share it in chat. The anon/public key is designed for browser use when Row Level Security is enabled.
+- Do not collect real payments or sensitive customer details until checkout, order handling, and security rules have been properly built and tested.
+- Use a parent/guardian to help with online service accounts and any payment-provider setup.
